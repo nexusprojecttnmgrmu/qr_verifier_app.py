@@ -49,11 +49,14 @@ st.title("🔍 QR Code Authenticity Verifier")
 
 uploaded_file = st.file_uploader("Upload a QR Code Image", type=["png", "jpg", "jpeg"])
 
+uploaded_file = st.file_uploader("Upload a QR Code Image", type=["png", "jpg", "jpeg"])
+
 if uploaded_file:
-    st.image(uploaded_file, caption="Uploaded QR Image", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded QR Image", use_container_width=True)
     result = process_qr_image(uploaded_file)
     st.markdown("---")
     st.write(f"**QR Data:** {result['qr_data']}")
     st.write(f"**Watermark:** {result['watermark']}")
     st.write(f"**Final Result:** {result['authenticity']}")
+
 
