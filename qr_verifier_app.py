@@ -47,9 +47,7 @@ def process_qr_image(file):
 
 st.title("🔍 QR Code Authenticity Verifier")
 
-uploaded_file = st.file_uploader("Upload a QR Code Image", type=["png", "jpg", "jpeg"])
-
-uploaded_file = st.file_uploader("Upload a QR Code Image", type=["png", "jpg", "jpeg"])
+uploaded_file = st.file_uploader("Upload a QR Code Image", type=["png", "jpg", "jpeg"], key="qr_uploader")
 
 if uploaded_file:
     st.image(uploaded_file, caption="Uploaded QR Image", use_container_width=True)
